@@ -13,14 +13,18 @@
 <body>
     <section id="menu">
         <div class="sidebar">
-            <header>Kasih Hospital</header>
+            <div class="head-sidebar">
+                <img src="../assets/Logo.svg" alt="logo">
+                <header>Kasih Hospital</header>
+            </div>
+                
             <ul class="features">
                 <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
                 <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
                 <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
                 <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
                 <li class="case1">
-                    <a href="#"><img src="../assets/users-solid.svg" alt="">Employees v</a>
+                    <a href="#"><img src="../assets/users-solid.svg" alt="">Employees &#9660;</a>
                     <ul class="dropdown">
                         <li><a href="#">Doctors</a></li>
                         <li><a href="#">Nurses</a></li>
@@ -28,13 +32,12 @@
                 </li>
 
                 <li class="case1">
-                    <a href="#"><img src="../assets/cog-solid.svg" alt="">Master v</a>
+                    <a href="#"><img src="../assets/cog-solid.svg" alt="">Master &#9660;</a>
                     <ul class="dropdown">
                         <li><a href="#">Spesialization</a></li>
                     </ul>
                 </li>
                 <hr>
-                <li class="case2"><a href="#">Collapse menu</a></li>
                 
                 <a href="#">
                     <button class="logout">Logout</button>
@@ -53,21 +56,24 @@
 
             <div class="background2">
                 <div class="container">
-                    <div class="normal-text">
-                        <p>Show</p>
-                        <select class="numberDropdown">
-                            <option value="">Select</option>
-                            <option value="1">5</option>
-                            <option value="2">10</option>
-                            <option value="3">20</option>
-                            <option value="4">30</option>
-                            <option value="5">50</option>
-                        </select>
-                        <p>Entries</p>
+                    <div class="cont-filter">
+                        <div class="normal-text">
+                            <p>Show</p>
+                            <select class="numberDropdown">
+                                <option value="">Select</option>
+                                <option value="1">5</option>
+                                <option value="2">10</option>
+                                <option value="3">20</option>
+                                <option value="4">30</option>
+                                <option value="5">50</option>
+                            </select>
+                            <p>Entries</p>
+                        </div>
+                        <div class="search-container">
+                            <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                        </div>
                     </div>
-                    <div class="search-container">
-                        <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
-                    </div>
+                    
                     <div class="top-button">
                         <a href="#">
                             <button class="new">New Doctor</button>

@@ -8,21 +8,22 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* SIDEBAR */
+
 .sidebar{
     position: fixed;
-    padding-left: 30px;
+    padding-left: 2em;
     left: 0;
-    width: 250px;
+    width: 15.7em;
     height: 100%;
     background-color: #FFFFFF;
 }
 
-/*Font untuk features */
-/* @font-face {
-    font-family: 'poppins';
-    src: url('poppins.regular.ttf') format('truetype');
-
-} */
+.head-sidebar {
+    display: flex;
+    background-color: #FFFFFF;
+    align-items: center;
+}
 
 .sidebar .features{
     background-color: #FFFFFF;
@@ -30,10 +31,10 @@
 
 .sidebar .features li{
     background-color: #FFFFFF;
-    font-size: 16.74px;
+    font-size: 1.1rem;
     font-family: 'poppins';
     color: #5D7285;
-    margin-bottom: 25px;
+    margin-bottom: 1.5em;
 }
 
 .sidebar .features .dropdown li{
@@ -42,21 +43,22 @@
 
 .features li a{
     background-color: #FFFFFF;
+    color: #5D7285;
 }
 
 /* Kalo gaperlu ilangin aja */
 .features li a:hover {
     background-color: #FFFFFF;
     color: black;
-    font-weight: 1000;
+    font-weight: 600;
 }
 
 /* Dropdown styles */
 .dropdown {
     display: none;
     list-style-type: none;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-left: 1.2em;
+    padding-top: 1.2em;
     background-color: #FFFFFF;
 }
 
@@ -65,15 +67,12 @@
     display: block;
 }
 
-.case2{
-    margin-top: 20px;
-}
 
 img{
     background-color: #FFFFFF;
-    margin-right: 10px;
-    width: 25px;
-    height: 25px;
+    margin-right: 1em;
+    width: 1.7vw;
+    height: auto;
 }
 
 .logout{
@@ -99,15 +98,20 @@ img{
     background-color: black;
 }
 
-/*Font untuk header */
-/* @font-face {
-    font-family: 'Epilogue';
-    src: url('epilogue.semibold.ttf') format('truetype');
-} */
+
+/* ISI */
 
 .container {
     background-color: #FFFFFF;
     display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-right: 2em;
+}
+
+.cont-filter {
+    display: flex;
+    background-color: white;
     align-items: center;
 }
 
@@ -224,15 +228,11 @@ img{
     color: #FFFFFF;
 }
 
-.top-button {
-    text-align: right;
-    margin-bottom: 20px;
-}
 
 .new{
     background-color: #667A8A;
     border: none;
-    position: absolute;
+    /* position: absolute; */
     height: 35px;
     width: 120px;
 
@@ -262,9 +262,6 @@ img{
     height: 30px;
     width: 30px;
 }
-
-
-
 
 
 .background2 {
