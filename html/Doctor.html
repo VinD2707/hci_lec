@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Doctor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous">
+</head>
+<body>
+    <section id="menu">
+        <div class="sidebar">
+            <header>Kasih Hospital</header>
+            <ul class="features">
+                <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
+                <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
+                <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
+                <li class="case1">
+                    <a href="#"><img src="../assets/users-solid.svg" alt="">Employees v</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Nurses</a></li>
+                    </ul>
+                </li>
+
+                <li class="case1">
+                    <a href="#"><img src="../assets/cog-solid.svg" alt="">Master v</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Spesialization</a></li>
+                    </ul>
+                </li>
+                <hr>
+                <li class="case2"><a href="#">Collapse menu</a></li>
+                
+                <a href="#">
+                    <button class="logout">Logout</button>
+                </a>
+                <!-- <li class="logout"><a href="#">Logout</a></li> -->
+            </ul>
+        </div>
+
+        <div class="isi">
+
+            <div class="top-menu">
+                <div>
+                    <h2>Doctor</h2>
+                </div>
+            </div>
+
+            <div class="background2">
+                <div class="container">
+                    <div class="normal-text">
+                        <p>Show</p>
+                        <select class="numberDropdown">
+                            <option value="">Select</option>
+                            <option value="1">5</option>
+                            <option value="2">10</option>
+                            <option value="3">20</option>
+                            <option value="4">30</option>
+                            <option value="5">50</option>
+                        </select>
+                        <p>Entries</p>
+                    </div>
+                    <div class="search-container">
+                        <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                    </div>
+                    <div class="top-button">
+                        <a href="#">
+                            <button class="new">New Doctor</button>
+                        </a>
+                    </div>
+                </div>
+    
+                <table class="wrapper">
+                    <thead class="header-table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone No.</th>
+                            <th>Spesialization</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    
+                    <!-- Nanti ini isi pake Database -->
+                    <tbody class="body-table">
+                        <tr>
+                            <td>D1</td>
+                            <td>Matt Dickerson</td>
+                            <td>Jalan Anggrek</td>
+                            <td>+62 876578</td>
+                            <td>Cardiology</td>
+                            <td class="case3">
+                                <a href="#"></a>
+                                <a href="Delete.html"></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>D2</td>
+                            <td>Wiktoria</td>
+                            <td>Sirathal Mustaqim</td>
+                            <td>+62 129438</td>
+                            <td>Dermatology</td>
+                            <td class="case3">
+                                <a href="#"></a>    
+                                <a href="Delete.html"></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>D3</td>
+                            <td>Trixie Byrd</td>
+                            <td>Jalan Cakra</td>
+                            <td>+62 738920</td>
+                            <td>Gastroenterology</td>
+                            <td class="case3">
+                                <a href="#"></a>
+                                <a href="Delete.html"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>D4</td>
+                            <td>Brad Mason</td>
+                            <td>Jalan Anggrek</td>
+                            <td>+62 1723921</td>
+                            <td>Endocrinology</td>
+                            <td class="case3">
+                                <a href="#"></a>
+                                <a href="Delete.html"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+    
+                </table>
+            </div>
+            
+
+        </div>
+
+    </section>
+</body>
+</html>
