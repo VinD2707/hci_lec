@@ -23,12 +23,19 @@
     background-color: #FFFFFF;
 }
 
+.sidebar header{
+    font-size: 24.06px;
+    font-family: 'Epilogue';
+    color: #5D7285;
+    line-height: 70px;
+    background-color: #FFFFFF;
+}
+
 .head-sidebar {
     display: flex;
     align-items: center;
     margin-bottom: 1em;
 }
-
 
 .features li{
     background-color: #FFFFFF;
@@ -210,14 +217,6 @@ img{
     border-radius: 8px; 
 }
 
-.sidebar header{
-    font-size: 24.06px;
-    font-family: 'Epilogue';
-    color: #5D7285;
-    line-height: 70px;
-    background-color: #FFFFFF;
-}
-
 .case3 {
     background-color: white; /* Set background color to white */
     text-align: center; /* Center-align text */
@@ -298,7 +297,7 @@ img{
     margin-right: 4em;
 }
 
-.top-button {
+.new-button {
     text-align: right;
     margin-bottom: 20px;
 }
