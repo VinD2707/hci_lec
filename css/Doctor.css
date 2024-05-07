@@ -4,8 +4,12 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    background-color: #00ADB5;
+    /* background-color: #00ADB5; */
     font-family: "Poppins", sans-serif;
+}
+
+#menu{
+    background-color: #00ADB5;
 }
 
 /* SIDEBAR */
@@ -21,15 +25,12 @@
 
 .head-sidebar {
     display: flex;
-    background-color: #FFFFFF;
     align-items: center;
+    margin-bottom: 1em;
 }
 
-.sidebar .features{
-    background-color: #FFFFFF;
-}
 
-.sidebar .features li{
+.features li{
     background-color: #FFFFFF;
     font-size: 1.1rem;
     font-family: 'poppins';
@@ -37,7 +38,7 @@
     margin-bottom: 1.5em;
 }
 
-.sidebar .features .dropdown li{
+.dropdown li{
     display: block;
 }
 
@@ -51,6 +52,10 @@
     background-color: #FFFFFF;
     color: black;
     font-weight: 600;
+}
+
+.features-li{
+    display: flex;
 }
 
 /* Dropdown styles */
@@ -96,6 +101,42 @@ img{
 /* Kalo gaperlu apus aja */
 .logout:hover{
     background-color: black;
+}
+
+/* OVERVIEW */
+.overview{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 5em 1em 0;
+}
+
+.overview-num{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    width: 15em;
+}
+
+.overview-num p{
+    font-weight: 700;
+}
+
+.ovr-total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 0.4em;
+}
+
+.ovr-active{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 0.4em;
 }
 
 
@@ -146,6 +187,7 @@ img{
     font-size: 15px;
     font-family: 'montserrat.regular';
     justify-content: space-between;
+    align-items: baseline;
 }
 
 .normal-text p{
@@ -157,7 +199,7 @@ img{
     width: 70px;
     height: 30px;
     font-size: 15px;
-    font-family: 'montserrat.regular';
+    font-family: 'montserrat';
     background-color: #E0E0E0;
     border-radius: 8px; 
 }
@@ -166,22 +208,6 @@ img{
     background-color: #E0E0E0;
     padding: 5px;
     border-radius: 8px; 
-}
-
-/* Font untuk table */
-@font-face {
-    font-family: 'montserrat.bold';
-    src: url('montserrat.bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.regular';
-    src: url('montserrat.regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.medium';
-    src: url('FontsFree-Net-Montserrat-Medium.ttf') format('truetype');
 }
 
 .sidebar header{
@@ -209,13 +235,14 @@ img{
 /* Custom icons */
 .case3 a:first-child {
     background-image: url('../assets/pen-solid.svg');
-    background-color: #FFFFFF;
+    margin-right: 0.5em;
 }
 
 .case3 a:last-child {
     background-image: url('../assets/trash-alt-solid.svg');  
-    background-color: #FFFFFF;
 }
+
+/* ISI */
 
 .isi{
     margin-left: 300px;
@@ -223,12 +250,12 @@ img{
 
 .isi h2{
     padding-top: 30px;
-    font-family: 'montserrat.bold';
+    font-family: 'montserrat';
     font-size: 32px;
     color: #FFFFFF;
 }
 
-
+/* TOMBOL NEW */
 .new{
     background-color: #667A8A;
     border: none;
@@ -265,10 +292,10 @@ img{
 
 
 .background2 {
-    margin-top: 200px;
+    margin-top: 4em;
     background-color: white;
-    padding: 20px;
-    margin-right: 50px;
+    padding: 1.1em;
+    margin-right: 4em;
 }
 
 .top-button {
@@ -288,15 +315,16 @@ img{
     background-color: #FFFFFF;
     color: black;
     font-size: 14px;
-    font-family: 'montserrat.bold';
+    font-family: 'montserrat';
     padding: 10px;
     text-align: left;
+    font-weight: 700;
     /* border: 1px solid; */
 }
 
 .body-table tr:nth-child(even) td{
     background-color: #FFFFFF;
-    font-family: 'montserrat.medium';
+    font-family: 'montserrat';
     padding: 10px;
     font-size: 14px;
     text-align: left; 
@@ -307,7 +335,7 @@ img{
 .body-table tr:nth-child(odd) td{
     background-color: #F7F6FE;
     height: 56px;
-    font-family: 'montserrat.medium';
+    font-family: 'montserrat';
     font-size: 14px;
     padding: 10px;
     text-align: left; 
