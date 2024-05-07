@@ -16,11 +16,6 @@
     background-color: #FFFFFF;
 }
 
-/*Font untuk features */
-@font-face {
-    font-family: 'poppins';
-    src: url('poppins.regular.ttf') format('truetype');
-}
 
 .sidebar .features{
     background-color: #FFFFFF;
@@ -95,29 +90,6 @@ img{
 /* Kalo gaperlu apus aja */
 .logout:hover{
     background-color: black;
-}
-
-/*Font untuk header */
-@font-face {
-    font-family: 'Epilogue';
-    src: url('epilogue.semibold.ttf') format('truetype');
-}
-
-
-/* Font untuk table */
-@font-face {
-    font-family: 'montserrat.bold';
-    src: url('montserrat.bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.regular';
-    src: url('montserrat.regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.medium';
-    src: url('FontsFree-Net-Montserrat-Medium.ttf') format('truetype');
 }
 
 .sidebar header{
