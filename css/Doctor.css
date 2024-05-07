@@ -41,6 +41,14 @@
     display: block;
 }
 
+.sidebar header{
+    font-size: 24.06px;
+    font-family: 'Epilogue';
+    color: #5D7285;
+    line-height: 70px;
+    background-color: #FFFFFF;
+}
+
 .features li a{
     background-color: #FFFFFF;
     color: #5D7285;
@@ -182,14 +190,6 @@ img{
 @font-face {
     font-family: 'montserrat.medium';
     src: url('FontsFree-Net-Montserrat-Medium.ttf') format('truetype');
-}
-
-.sidebar header{
-    font-size: 24.06px;
-    font-family: 'Epilogue';
-    color: #5D7285;
-    line-height: 70px;
-    background-color: #FFFFFF;
 }
 
 .case3 {
