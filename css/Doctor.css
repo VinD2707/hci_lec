@@ -208,12 +208,12 @@ img{
 
 /* Custom icons */
 .case3 a:first-child {
-    background-image: url('pen-solid.svg');
+    background-image: url('../assets/pen-solid.svg');
     background-color: #FFFFFF;
 }
 
 .case3 a:last-child {
-    background-image: url('trash-alt-solid.svg');  
+    background-image: url('../assets/trash-alt-solid.svg');  
     background-color: #FFFFFF;
 }
 
