@@ -225,25 +225,6 @@ img{
     border-radius: 8px; 
 }
 
-<<<<<<< HEAD
-/* Font untuk table */
-@font-face {
-    font-family: 'montserrat.bold';
-    src: url('montserrat.bold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.regular';
-    src: url('montserrat.regular.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'montserrat.medium';
-    src: url('FontsFree-Net-Montserrat-Medium.ttf') format('truetype');
-}
-
-=======
->>>>>>> 6d161007ee2ffbc1ce30e6bd402d410f7bb21e43
 .case3 {
     background-color: white; /* Set background color to white */
     text-align: center; /* Center-align text */
