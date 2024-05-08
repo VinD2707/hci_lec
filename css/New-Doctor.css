@@ -4,19 +4,26 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  /* background-color: #00ADB5; */
   font-family: "Poppins", sans-serif;
 }
 
+.background {
+  background-color: #00ADB5;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
 
 #menu{
-  background-color: #00ADB5;
+  display: flex;
+  min-height: max-content;
+  height: 100%;
 }
+
 
 /* SIDEBAR */
 
 .sidebar{
-  position: fixed;
   padding-left: 2em;
   left: 0;
   width: 15.7em;
@@ -55,7 +62,7 @@
 }
 
 .features li a{
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #5D7285;
 }
 
@@ -89,31 +96,29 @@ img{
 }
 
 .logout{
-  margin-top: 100px;
   background-color: #667A8A;
   border: none;
-  position: absolute;
-  height: 50px;
-  width: 200px;
-
-  font-size: 16.74px;
-  font-family: 'poppins';
-  color: #FFFFFF;
+  padding: 1em;
+  font-size: 1rem;
   text-align: center;
+  margin: 6.5em 2em 1em 0;
 }
-
 
 /* Kalo gaperlu apus aja */
 .logout:hover{
   background-color: black;
 }
 
+
+
+
+
 /* ISI */
 
 .isi{
-  margin-left: 300px;
+  margin-left: 2em;
   background-color: #00ADB5;
-  bottom: 0;
+  width: 80%;
 }
 
 .isi h2{

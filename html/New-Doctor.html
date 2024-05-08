@@ -14,74 +14,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous">
 </head>
 <body>
-    <section id="menu">
-        <div class="sidebar">
-            <div class="head-sidebar">
-                <img src="../assets/Logo.svg" alt="logo">
-                <header>Kasih Hospital</header>
+    <div class="background">
+        <section id="menu">
+            <div class="sidebar">
+                <div class="head-sidebar">
+                    <img src="../assets/Logo.svg" alt="logo">
+                    <header>Kasih Hospital</header>
+                </div>
+        
+                <ul class="features">
+                    <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                    <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
+                    <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
+                    <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
+                    <li class="case1">
+                        <a href="#"><img src="../assets/users-solid.svg" alt="">Employees &#9660;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Doctors</a></li>
+                            <li><a href="#">Nurses</a></li>
+                        </ul>
+                    </li>
+                    <li class="case1">
+                        <a href="#"><img src="../assets/cog-solid.svg" alt="">Master &#9660;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Spesialization</a></li>
+                        </ul>
+                    </li>
+                    <!-- <hr> -->
+        
+                    <!-- <a href="#">
+                        <button class="logout">Logout</button>
+                    </a> -->
+                    <div class="logout">
+                        <a href="#">Logout</a>
+                    </div>
+                </ul>
             </div>
-                
-            <ul class="features">
-                <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
-                <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
-                <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
-                <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
-                <li class="case1">
-                    <a href="#"><img src="../assets/users-solid.svg" alt="">Employees &#9660;</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Doctors</a></li>
-                        <li><a href="#">Nurses</a></li>
-                    </ul>
-                </li>
-
-                <li class="case1">
-                    <a href="#"><img src="../assets/cog-solid.svg" alt="">Master &#9660;</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Spesialization</a></li>
-                    </ul>
-                </li>
-                <!-- <hr> -->
-                
-                <!-- <a href="#">
-                    <button class="logout">Logout</button>
-                </a> -->
-                <li class="logout"><a href="#">Logout</a></li>
-            </ul>
-        </div>
-
-        <div class="isi">
-
-            <div class="top-menu">
-                <div>
-                    <h2>Doctor</h2>
+            <div class="isi">
+                <div class="top-menu">
+                    <div>
+                        <h2>Doctor</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <form action="" method="post" class="wrapper">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <label for="phone">Phone No. *</label>
+                            <input type="text" id="phone" name="phone" required>
+                            <label for="account-number">Account Number *</label>
+                            <input type="text" id="account-number" name="account-number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                            <label for="specialization">Specialization *</label>
+                            <input type="text" id="specialization" name="specialization" required>
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="btn">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-            <div class="container">
-                <form action="" method="post" class="wrapper">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="phone">Phone No. *</label>
-                        <input type="text" id="phone" name="phone" required>
-                        <label for="account-number">Account Number *</label>
-                        <input type="text" id="account-number" name="account-number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address *</label>
-                        <input type="text" id="address" name="address" required>
-                        <label for="specialization">Specialization *</label>
-                        <input type="text" id="specialization" name="specialization" required>
-                        <label for="password">Password *</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="submit-btn">
-                        <button type="submit" class="btn">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </section>
+        </section>
+    </div>
 </body>
 </html>
