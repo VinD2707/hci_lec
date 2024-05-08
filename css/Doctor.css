@@ -4,24 +4,30 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    /* background-color: #00ADB5; */
     font-family: "Poppins", sans-serif;
 }
 
-#menu{
+.background {
     background-color: #00ADB5;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+  }
+  
+#menu{
+    display: flex;
+    min-height: max-content;
+    height: 100%;
 }
 
 /* SIDEBAR */
-
 .sidebar{
-    position: fixed;
     padding-left: 2em;
     left: 0;
     width: 15.7em;
     height: 100%;
     background-color: #FFFFFF;
-}
+  }
 
 .sidebar header{
     font-size: 24.06px;
@@ -33,9 +39,10 @@
 
 .head-sidebar {
     display: flex;
+    background-color: #FFFFFF;
     align-items: center;
-    margin-bottom: 1em;
 }
+
 
 .features li{
     background-color: #FFFFFF;
@@ -69,10 +76,6 @@
     font-weight: 600;
 }
 
-.features-li{
-    display: flex;
-}
-
 /* Dropdown styles */
 .dropdown {
     display: none;
@@ -96,27 +99,24 @@ img{
 }
 
 .logout{
-    margin-top: 100px;
     background-color: #667A8A;
     border: none;
-    position: absolute;
-    height: 50px;
-    width: 200px;
-
-    font-size: 16.74px;
-    font-family: 'poppins';
-}
-
-.logout{
-    background-color: #667A8A;
-    color: #FFFFFF;
+    padding: 1em;
+    font-size: 1rem;
     text-align: center;
-}
+    margin: 6.5em 2em 1em 0;
+  }
 
 /* Kalo gaperlu apus aja */
-.logout:hover{
+.logout:hover {
     background-color: black;
+    pointer-events: fill;
 }
+
+.logout a{
+    color: white;
+}
+
 
 /* OVERVIEW */
 .overview{
@@ -250,10 +250,11 @@ img{
 }
 
 /* ISI */
-
 .isi{
-    margin-left: 300px;
-}
+    margin-left: 2em;
+    background-color: #00ADB5;
+    width: 80%;
+  }
 
 .isi h2{
     padding-top: 30px;
