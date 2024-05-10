@@ -21,141 +21,180 @@
 }
 
 /* SIDEBAR */
+  
 .sidebar{
-    padding-left: 2em;
+    position: relative;
+    padding-top: 0.5em;
     left: 0;
-    width: 15.7em;
+    width: 15%;
     height: 100%;
     background-color: #FFFFFF;
+    overflow: hidden;
   }
-
-.sidebar header{
-    font-size: 24.06px;
-    font-family: 'Epilogue';
-    color: #5D7285;
-    line-height: 70px;
-    background-color: #FFFFFF;
-}
-
-.head-sidebar {
+  
+  .head-sidebar {
     display: flex;
+    margin: auto;
+    margin-left: 10%;
+
+    width: fit-content;
     background-color: #FFFFFF;
-    align-items: center;
-}
+  }
+  
+  .sidebar .features{
+    background-color: #FFFFFF;
+    margin-left: 15%;
 
-
-.features li{
+    margin-top: 1em;
+  }
+  
+  .sidebar .features li{
     background-color: #FFFFFF;
     font-size: 1.1rem;
     font-family: 'poppins';
     color: #5D7285;
     margin-bottom: 1.5em;
-}
-
-.dropdown li{
+  }
+  
+  .sidebar .features .dropdown li{
     display: block;
-}
-
-.sidebar header{
+  }
+  
+  .sidebar header{
     font-size: 24.06px;
     font-family: 'Epilogue';
     color: #5D7285;
     line-height: 70px;
     background-color: #FFFFFF;
-}
-
-.features li a{
-    background-color: #FFFFFF;
+  }
+  
+  .features li a{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
     color: #5D7285;
-}
-
-/* Kalo gaperlu ilangin aja */
-.features li a:hover {
+  }
+  
+  /* Kalo gaperlu ilangin aja */
+  .features li:hover {
     background-color: #FFFFFF;
     color: black;
     font-weight: 600;
-}
-
-/* Dropdown styles */
-.dropdown {
+  }
+  
+  /* Dropdown styles */
+  
+  .dropdown-head{
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .dropdown {
     display: none;
     list-style-type: none;
-    padding-left: 1.2em;
+    padding-left: 3.2em;
     padding-top: 1.2em;
     background-color: #FFFFFF;
-}
-
-.case1:hover .dropdown {
-    background-color: #FFFFFF;
-    display: block;
-}
-
-
-img{
+  }
+  
+  
+  img{
     background-color: #FFFFFF;
     margin-right: 1em;
     width: 1.7vw;
     height: auto;
-}
-
-.logout{
+  }
+  
+  .logout{
     background-color: #667A8A;
     border: none;
     padding: 1em;
     font-size: 1rem;
     text-align: center;
-    margin: 6.5em 2em 1em 0;
-}
-
-/* Kalo gaperlu apus aja */
-.logout:hover {
+    
+  
+    position: absolute;
+    bottom: 5%;
+    left: 10%; 
+  
+  
+    width: 80%;
+    margin: auto;
+    margin-top: 4em;
+  }
+  
+  /* Kalo gaperlu apus aja */
+  .logout:hover{
     background-color: black;
-    pointer-events: fill;
-}
-
-.logout a{
+  }
+  
+  .logout a{
     color: white;
-}
+  }
+  
 
 
 /* OVERVIEW */
 .overview{
-    display: flex;
-    justify-content: space-between;
-    margin: 1em 5em 1em 0;
+  display: flex;
+  justify-content: space-between;
+  height: 25%;
+  margin: 1em 5em 1em 0;
+  column-gap: 5%;
 }
 
 .overview-num{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1em;
-    width: 15em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  height: 100%;
+  width: 15em;
 }
 
 .overview-num p{
     font-weight: 700;
 }
 
-.ovr-total{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 0.5em;
-    border-radius: 0.4em;
+.ovr-stat{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  height: 50%;
+  padding-left: 6%;
+  padding-right: 14%;
+  font-size: 28px;
 }
 
-.ovr-active{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 0.5em;
-    border-radius: 0.4em;
+/* Charts */
+
+.boxcontent{
+  display: flex;
+  width: 65%;
+  background-color:white;
+  border-radius: 15px;
+  padding: 10px 10px 10px 10px;
+}
+
+.boxcontent canvas{
+  width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 
 /* ISI */
+
+.isi{
+    background-color: #00ADB5;
+    flex-grow: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
 .container {
     background-color: #FFFFFF;
