@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .background {
+    background-color: #00ADB5;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
+
+  }
+  
+  #menu{
+    display: flex;
+    min-height: max-content;
+    height: 100%;
+  }
+  
+  
+  /* SIDEBAR */
+  
+  .sidebar{
+    position: fixed;
+    padding-top: 0.5em;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background-color: #FFFFFF;
+    overflow: hidden;
+  }
+  
+  .head-sidebar {
+    display: flex;
+    margin: auto;
+    margin-left: 10%;
+    width: fit-content;
+    background-color: #FFFFFF;
+  }
+  
+  .sidebar .features{
+    background-color: #FFFFFF;
+    margin-left: 15%;
+    margin-top: 1em;
+  }
+  
+  .sidebar .features li{
+    background-color: #FFFFFF;
+    font-size: 1.1rem;
+    font-family: 'poppins';
+    color: #5D7285;
+    margin-bottom: 1.5em;
+  }
+  
+  .sidebar .features .dropdown li{
+    display: block;
+  }
+  
+  .sidebar header{
+    font-size: 24.06px;
+    font-family: 'Epilogue';
+    color: #5D7285;
+    line-height: 70px;
+    background-color: #FFFFFF;
+  }
+  
+  .features li a{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    color: #5D7285;
+  }
+  
+  /* Kalo gaperlu ilangin aja */
+  .features li:hover {
+    background-color: #FFFFFF;
+    color: black;
+    font-weight: 600;
+  }
+  
+  /* Dropdown styles */
+  
+  .dropdown-head{
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .dropdown {
+    display: none;
+    list-style-type: none;
+    padding-left: 3.2em;
+    padding-top: 1.2em;
+    background-color: #FFFFFF;
+  }
+  
+  
+  img{
+    background-color: #FFFFFF;
+    margin-right: 1em;
+    width: 1.7vw;
+    height: auto;
+  }
+  
+  .logout{
+    background-color: #667A8A;
+    border: none;
+    padding: 1em;
+    font-size: 1rem;
+    text-align: center;
+    
+  
+    position: absolute;
+    bottom: 5%;
+    left: 10%; 
+  
+  
+    width: 80%;
+    margin: auto;
+    margin-top: 4em;
+  }
+  
+  /* Kalo gaperlu apus aja */
+  .logout:hover{
+    background-color: black;
+  }
+  
+  .logout a{
+    color: white;
+  }
+  
+  
+  
+  /* ISI */
+  
+  #isi{
+    margin-left: 17.5%;
+    margin-right: 2em;
+    background-color: #00ADB5;
+    
+    width: 80%;
+  }
+
+
+  
+  #isi h1{
+    padding-top: 30px;
+    font-family: 'montserrat';
+    font-size: 32px;
+    color: #FFFFFF;
+  }
+
+  #statuswrapper{
+    width: 100%;
+    height: 13em;
+    background-color: #EEEEEE;
+    margin-top: 2em;
+    border-radius: 10px;
+    padding-top: 1em;
+
+
+  }
+
+  #statuscontainer{
+    margin-top: 2em;
+    width: 100%;
+    height: 30%;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5%;
+
+    border-radius: 10px;
+  }
+
+  #statuswrapper h2{
+    margin-left: 1em;
+    font-size: 28px;
+  }
+
+  .status{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 20%;
+    height: 5em;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+
+    padding: 1em;
+    
+  }
+
+
+
+
+  /* Statistics */
+
+
+  #statistics{
+    width: 100%;
+    height: 100em;
+    background-color: #EEEEEE;
+    margin-top: 8em;
+    border-radius: 10px;
+    padding-top: 1em;
+    
+  }
+
+  #statisticstop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10em;
+    /* background-color: aqua; */
+    gap: 3.5%;
+
+  }
+
+  .statisticbubble{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 20%;
+    height: 8em;
+    border-radius: 10px;
+    padding: 1em;
+
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+
+  }
+
+  /* Appoitnment */
+
+
+  #appointment{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 80em;
+
+    background-color: white;
+    margin: 2% 5%;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+
+
+    padding: 3em 2em;
+  }
+
+  #appointment h2{
+    
+    font-family: 'montserrat';
+
+    font-size: 28px;
+    color: black;
+  }
+
+  #appointment #bottomsection{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30em;
+    margin-top: 4em;
+  }
+  
+  #appointment .table{
+      width: 50%;
+      background-color: aqua;
+  }
+
+  #appointment .canvaswrapper{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    border: none;
+
+
+  }
+
+  #appointment .canvaswrapper canvas{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+  }
+
+  .name{
+    font-family: 'montserrat';
+
+    font-size: 22px;
+    font-weight: 400;
+  }
+  
+  .stat{
+    font-size: 22px;
+  }
+
+  
+ 

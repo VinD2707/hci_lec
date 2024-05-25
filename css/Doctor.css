@@ -369,7 +369,7 @@
     /* border: 1px solid; */
 }
 
-.body-table tr:nth-child(even) td{
+#body-table tr:nth-child(even) td{
     background-color: #FFFFFF;
     font-family: 'montserrat';
     padding: 10px;
@@ -379,7 +379,7 @@
     /* border: 1px solid; */
 }
 
-.body-table tr:nth-child(odd) td{
+#body-table tr:nth-child(odd) td{
     background-color: #F7F6FE;
     height: 56px;
     font-family: 'montserrat';
