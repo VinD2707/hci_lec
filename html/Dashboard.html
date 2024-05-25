@@ -39,7 +39,7 @@
                             </div>
                             
                             <ul class="dropdown">
-                                <li><a href="#">Doctors</a></li>
+                                <li><a href="/html/Doctor.html">Doctors</a></li>
                                 <li><a href="#">Nurses</a></li>
                             </ul>
                         </div>
@@ -72,23 +72,23 @@
                         <div id = 'statuscontainer'>
 
                             <div class = 'status'>
-                                <h3 class = 'name'>Available ICU Units</h3>
-                                <h3 class = 'stat'>4</h3>
+                                <h3 class = 'statname'>Available ICU Units</h3>
+                                <h3 class = 'statvalue'>4</h3>
                             </div>
 
                             <div class = 'status'>
-                                <h3 class = 'name'>Appointments</h3>
-                                <h3 class = 'stat'>30</h3>
+                                <h3 class = 'statname'>Appointments</h3>
+                                <h3 class = 'statvalue'>30</h3>
                             </div>
 
                             <div class = 'status'>
-                                <h3 class = 'name'>Active Doctors</h3>
-                                <h3 class = 'stat'>10</h3>
+                                <h3 class = 'statname'>Active Doctors</h3>
+                                <h3 class = 'statvalue'>10</h3>
                             </div>
 
                             <div class = 'status'>
-                                <h3 class = 'name'>Empty Beds</h3>
-                                <h3 class = 'stat'>20</h3>
+                                <h3 class = 'statname'>Empty Beds</h3>
+                                <h3 class = 'statvalue'>20</h3>
                             </div>
 
 
@@ -99,23 +99,23 @@
                         <div id = 'statisticstop'>
 
                             <div class = 'statisticbubble'>
-                                <h3 class = 'name'>Total Appointments</h3>
-                                <h3 class = 'stat'>365</h3>
+                                <h3 class = 'statname'>Total Appointments</h3>
+                                <h3 class = 'statvalue'>365</h3>
                             </div>
 
                             <div class = 'statisticbubble'>
-                                <h3 class = 'name'>Most Visited Department</h3>
-                                <h3 class = 'stat'>Pediatrician</h3>
+                                <h3 class = 'statname'>Most Visited Department</h3>
+                                <h3 class = 'statvalue'>Pediatrician</h3>
                             </div>
 
                             <div class = 'statisticbubble'>
-                                <h3 class = 'name'>Average Hospitalization Time</h3>
-                                <h3 class = 'stat'>3 Days</h3>
+                                <h3 class = 'statname'>Average Hospitalization Time</h3>
+                                <h3 class = 'statvalue'>3 Days</h3>
                             </div>
 
                             <div class = 'statisticbubble'>
-                                <h3 class = 'name'>Average Wait Time</h3>
-                                <h3 class = 'stat'>40 Mins</h3>
+                                <h3 class = 'statname'>Average Wait Time</h3>
+                                <h3 class = 'statvalue'>40 Mins</h3>
                             </div>
 
 
@@ -129,8 +129,112 @@
 
                             <div id = 'bottomsection'>
                                 <div class = 'canvaswrapper'> <canvas id="departmentratio" aria-label="Hello ARIA World" role="img"></canvas></div>
-                                <div class = 'table'>
-
+                                <div id = 'appointmentwrapper'>
+                                    <table id="appointmentTable">
+                                        <thead class="header-table">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Specialization</th>
+                                                <th>Date</th>
+                                                <th>Time</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody id="body-table">
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                    Done
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+    
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                    Pending
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                    Done
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                        Cancelled
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>    
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                        Cancelled
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+    
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                    Done
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>A1</td>
+                                                <td>Nerve</td>
+                                                <td>6/4/2024</td>
+                                                <td>12:00AM</td>
+                                                <td>
+                                                    <div class = 'tablestatus'>
+                                                        Done
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+    
+                                           
+                                                
+                                                
+                                        </tbody>
+                        
+                                    </table>
                                 </div>
                             </div>                            
 

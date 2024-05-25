@@ -23,7 +23,8 @@
 /* SIDEBAR */
   
 .sidebar{
-    position: relative;
+    position: fixed;
+
     padding-top: 0.5em;
     left: 0;
     width: 15%;
@@ -139,8 +140,8 @@
 .overview{
   display: flex;
   justify-content: space-between;
-  height: 25%;
-  margin: 1em 5em 1em 0;
+  height: 18em;
+  margin: 1em 0;
   column-gap: 5%;
 }
 
@@ -187,14 +188,6 @@
 }
 
 
-/* ISI */
-
-.isi{
-    background-color: #00ADB5;
-    flex-grow: 1;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
 
 .container {
     background-color: #FFFFFF;
@@ -290,7 +283,7 @@
 
 /* ISI */
 .isi{
-    margin-left: 2em;
+    margin-left: 17.5%;
     background-color: #00ADB5;
     width: 80%;
   }
@@ -342,7 +335,7 @@
     margin-top: 2em;
     background-color: white;
     padding: 1.1em;
-    margin-right: 4em;
+    /* margin-right: 4em; */
 }
 
 .new-button {

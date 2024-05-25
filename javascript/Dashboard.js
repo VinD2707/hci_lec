@@ -53,7 +53,6 @@ async function getData(){
 
         department_data.push(temp);
     })
-    console.log(department_labels);
     appointment();  
     department()
     
@@ -168,7 +167,7 @@ function department(){
         datasets: [{
             data: department_data[0],
             borderWidth: 3,
-            backgroundColor: ['#0984e3', "#fbc531", "#55efc4"],
+            backgroundColor: ['#55efc4', "#81ecec", "#74b9ff"],
             borderColor: 'rgb(0,0,0)',
             tension: 0.1
         }]
@@ -224,5 +223,39 @@ function department(){
         }
     });
     }
+
+
+
+    // Table Status Update 
+
+
+window.addEventListener('load', function() {
+
+    let tablestatus = document.getElementsByClassName('tablestatus')
+
+    for(i = 0; i < tablestatus.length; i++){
+            const status = tablestatus[i].innerHTML.trim()
+
+            if(status === 'Done'){
+                tablestatus[i].style.backgroundColor = '#EBF9F1'
+                tablestatus[i].style.color = '#1F9254';
+            }
+            else if(status === 'Pending'){
+                tablestatus[i].style.backgroundColor = '#FEF2E5'
+                tablestatus[i].style.color = '#CD6200';
+            }
+            else if(status === 'Cancelled'){
+                tablestatus[i].style.backgroundColor = '#FBE7E8'
+                tablestatus[i].style.color = '#A30D11';
+            }
+            else{
+                tablestatus[i].style.backgroundColor = 'none'
+                tablestatus[i].style.color = '#7f8fa6';
+                tablestatus[i].innerHTML = '?'
+            }
+        }
+    
+
+})
     
 
