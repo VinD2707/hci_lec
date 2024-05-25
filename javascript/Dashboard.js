@@ -453,7 +453,6 @@ window.addEventListener('load', function() {
     const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
 
     let temp = 0
-    console.log(billings_bar_data[0][0])
     for(i = 0; i < billings_bar_data[0].length; i++){
             temp += parseInt(billings_bar_data[0][i])
             console.log(temp)
@@ -465,3 +464,41 @@ window.addEventListener('load', function() {
 
 })
 
+// dateinputs 
+
+dateinputs = document.getElementsByClassName('date')
+
+for(i=0; i< dateinputs.length; i++){
+    dateinputs[i].addEventListener('focusin', function(){
+        this.type = 'datetime-local'
+        this.style.color = 'black'
+        this.showPicker()
+    })
+
+    dateinputs[i].addEventListener('focusout', function(){
+        this.type = ''
+    })
+}
+
+
+function convertDateFormat(inputDate) {
+    var parts = inputDate.split(/[T:-]/);
+
+    // Rearrange the components to the dd/mm/yyyy format
+    var formattedDate = parts[2] + '-' + parts[1] + '-' + parts[0];
+
+    console.log(parts)
+    return formattedDate;
+
+}
+
+
+function changeformat(event){
+    let element = event.target
+
+    let current_format = element.value
+    console.log(current_format)
+
+    element.value = convertDateFormat(current_format)
+
+}
