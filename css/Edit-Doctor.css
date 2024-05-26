@@ -153,15 +153,16 @@ img{
   color: #FFFFFF;
 }
 
+.edit {
+  display: flex;
+  flex-direction: column;
+}
 
 .container {
   display: flex;
   flex-direction: column;
   padding: 2.5em;
-  margin: 5vw;
   background-color: white;
-  height: 80%;
-  
 }
 
 .wrapper {
@@ -171,6 +172,7 @@ img{
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2rem;
   gap: 20px;
 }
 

@@ -11,7 +11,7 @@
 
 
 
-    <link rel="stylesheet" href="../css/New-Doctor.css">
+    <link rel="stylesheet" href="../css/Edit-Doctor.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous"> -->
 </head>
     <div class="background">
@@ -66,25 +66,47 @@
                         <h2>Doctor</h2>
                     </div>
                 </div>
+                
                 <div class="container">
                     <form action="" method="post" class="wrapper">
-                        <div class="form-group">
-                            <label for="name">Name <span style="color: red;">*</span></label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="phone">Phone No. <span style="color: red;">*</span></label>
-                            <input type="text" id="phone" name="phone" required>
-                            <label for="account-number">Account Number <span style="color: red;">*</span></label>
-                            <input type="text" id="account-number" name="account-number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address <span style="color: red;">*</span></label>
-                            <input type="text" id="address" name="address" required>
-                            <label for="specialization">Specialization <span style="color: red;">*</span></label>
-                            <input type="text" id="specialization" name="specialization" required>
-                            <label for="password">Password <span style="color: red;">*</span></label>
-                            <input type="password" id="password" name="password" required>
-                        </div>
-                        <div id="none"></div>
+                      <div class="title"><h1>Current Data</h1></div>
+                      <div class="none"></div>
+                      <div class="form-group">
+                        <label for="name">Name <span style="color: red;">*</span></label>
+                        <input type="text" id="name" name="name" required disabled placeholder="Shanon Doe">
+                        <label for="phone">Phone No. <span style="color: red;">*</span></label>
+                        <input type="text" id="phone" name="phone" required disabled placeholder="+62 129438">
+                        <label for="account-number">Account Number <span style="color: red;">*</span></label>
+                        <input type="text" id="account-number" name="account-number" required disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Address <span style="color: red;">*</span></label>
+                        <input type="text" id="address" name="address" required disabled placeholder="Jalan Lingkar">
+                        <label for="specialization">Specialization <span style="color: red;">*</span></label>
+                        <input type="text" id="specialization" name="specialization" required disabled placeholder="Orthopedy">
+                        <label for="password">Password <span style="color: red;">*</span></label>
+                        <input type="password" id="password" name="password" required disabled>
+                      </div>
+
+                      <div class="title"><h1>Modified Data</h1></div>
+                      <div class="none"></div>
+                      <div class="form-group">
+                        <label for="name">Name <span style="color: red;">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="phone">Phone No. <span style="color: red;">*</span></label>
+                        <input type="text" id="phone" name="phone" required>
+                        <label for="account-number">Account Number <span style="color: red;">*</span></label>
+                        <input type="text" id="account-number" name="account-number" required disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Address <span style="color: red;">*</span></label>
+                        <input type="text" id="address" name="address" required >
+                        <label for="specialization">Specialization <span style="color: red;">*</span></label>
+                        <input type="text" id="specialization" name="specialization" required>
+                        <label for="password">Password <span style="color: red;">*</span></label>
+                        <input type="password" id="password" name="password" required>
+                      </div>
+                      <div id="none"></div>
                         <div class="submit-btn">
                             <button type="submit" class="btn">Save</button>
                         </div>
