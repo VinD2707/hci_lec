@@ -340,6 +340,7 @@
       background-color: aqua;
   }
 
+
   #appointment .canvaswrapper{
     position: relative;
     width: 50%;
@@ -394,6 +395,8 @@
 
     /* border: 1px solid; */
 }
+
+
 
 #body-table tr{
   height: 2em;

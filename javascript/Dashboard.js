@@ -19,10 +19,12 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 
 }
 
-
+let selected_start_date = null
+let selected_end_date = null
 // Charts
 let appointment_data = []; // Data
 let appointment_instance = null; // Chart Instance
+let appointment_dates  = []
 const appointment_chart = document.getElementById('appointments'); // HTML Chart
 
 let department_data = []
@@ -45,12 +47,14 @@ window.addEventListener('resize', function () { appointment(); department(); bil
 async function getData(){
 
     // appointmetns
-    let response = await fetch('../csv/Appointments.csv');
+    let response = await fetch('../csv/Appointment Dated4.csv');
     let data = await response.text();
-    let table = data.split('\n').slice(1);
+    let table = data.split('\n');
 
-    table.forEach(element => {
-        const temp = element.split(';');
+    appointment_dates = table[0].split(',')
+
+    table.slice(1).forEach(element => {
+        const temp = element.split(',');
         appointment_data.push(temp);
     })
 
@@ -103,35 +107,43 @@ async function getData(){
 }
 
 
-// Initialize Window
-
 window.addEventListener('load', async function() {
-
-    // Get the Data
     await getData();
 
-    // Calculate Billings Amount Update Visualization
     const billingsbubble = document.getElementById('billingsbubble');
     const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
-    let temp = 0
-    if (typeof billings_bar_data !== 'undefined' && billings_bar_data.length > 0) {
-        let data = billings_bar_data[0]
 
-        for(i = 0; i < data.length; i++){
-                temp += parseInt(data[i])
+    let temp = 0
+    for(i = 0; i < billings_bar_data[0].length; i++){
+            temp += parseInt(billings_bar_data[0][i])
+            console.log(temp)
         }
-    }
-    
 
     total_billing.innerHTML = temp.toLocaleString()
+    
+    
 
 })
 
 
+function parseDate(dateString) {
+    if(dateString === null){return null}
+    const [day, month, year] = dateString.split('/').map(Number);
+    // Note: Months are 0-based in JavaScript Date, so subtract 1 from month
+    return new Date(year, month - 1, day);
+}
 
+function getDaysBetweenDates(startDate, endDate) {
+    const start = parseDate(startDate);
+    const end = parseDate(endDate);
+    const timeDifference = end - start;
+    const dayDifference = timeDifference / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+    return dayDifference;
+}
 
 
 function getdates(startDate, dateNumber) {
+    if(selected_end_date===null || selected_start_date === null){return null}  
     const dateList = [];
     const currentDate = new Date(startDate); 
 
@@ -144,6 +156,24 @@ function getdates(startDate, dateNumber) {
     return dateList;
 }
 
+function getDataInRange(dataArray, dateArray, startDate, endDate) {
+    const start =parseDate(startDate);
+    const end = parseDate(endDate);
+    const dataInRange = [];
+    console.log('start',start)
+
+    dateArray.forEach((dateString, index) => {
+        const date = parseDate(dateString);
+        console.log('date', date)
+        if (date >= start && date <= end) {
+            dataInRange.push(dataArray[index]);
+        }
+    });
+
+    return dataInRange;
+}
+
+
 
 
 function appointment(){
@@ -152,8 +182,12 @@ if(appointment_instance != null){
 };
 
 
-const startDate = new Date('2024-05-24');
-const datesList = getdates(startDate, (appointment_data[0].length));
+
+const datesList = getdates(parseDate(selected_start_date), getDaysBetweenDates(selected_start_date, selected_end_date) + 1);
+
+console.log('fullarray',appointment_data[0])
+console.log('dates subarray', getDataInRange(appointment_data[0], appointment_dates, selected_start_date, selected_end_date))
+
 
 appointment_instance = new Chart(appointment_chart, {
     maintainAspectRatio: false,
@@ -162,7 +196,7 @@ appointment_instance = new Chart(appointment_chart, {
     labels: datesList ,
     datasets: [{
         label: 'Doctor Status',
-        data: appointment_data[0],
+        data: getDataInRange(appointment_data[0], appointment_dates, selected_start_date, selected_end_date),
         backgroundColor: 'rgb(0,0,0)',
         borderWidth: 3,
         
@@ -470,6 +504,9 @@ window.addEventListener('load', function() {
 })
 
 
+// update total billings
+
+
 
 // dateinputs 
 
@@ -494,7 +531,7 @@ function convertDateFormat(inputDate) {
     var parts = inputDate.split(/[T:-]/);
 
     // Rearrange the components to the dd/mm/yyyy format
-    var formattedDate = parts[2] + '-' + parts[1] + '-' + parts[0];
+    var formattedDate = parts[2] + '/' + parts[1] + '/' + parts[0];
 
     console.log(parts)
     return formattedDate;
@@ -502,12 +539,35 @@ function convertDateFormat(inputDate) {
 }
 
 
-function changeformat(event){
+function changeformat_start(event){
     let element = event.target
 
     let current_format = element.value
     console.log(current_format)
+    console.log(convertDateFormat(current_format))
+    element.type = ''
 
     element.value = convertDateFormat(current_format)
+
+    selected_start_date = convertDateFormat(current_format)
+
+    appointment()
+    
+}
+
+function changeformat_end(event){
+    let element = event.target
+
+    let current_format = element.value
+    console.log(current_format)
+    console.log(convertDateFormat(current_format))
+    element.type = ''
+
+    element.value = convertDateFormat(current_format)
+
+    selected_end_date = convertDateFormat(current_format)
+
+    appointment()
+
 
 }
