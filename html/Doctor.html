@@ -22,7 +22,7 @@
                 </div>
         
                 <ul class="features">
-                    <li><a href="/html/Dashboard.html"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                    <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
                     <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
                     <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
                     <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
@@ -76,7 +76,7 @@
                             <h3>Total Doctors</h3>
                             <p>4</p>
                         </div>
-                        <div onclick="addDoctor()" class="ovr-stat">
+                        <div class="ovr-stat">
                             <h3>Active Doctors</h3>
                             <p>4</p>
                         </div>
@@ -99,7 +99,7 @@
                                 <p>Entries</p>
                             </div>
                             <div class="search-container">
-                                <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                                <input type="search" id="search" name="search" class="search-input" placeholder="Search..." onchange="Search(event)">
                             </div>
                         </div>
                         
@@ -123,10 +123,10 @@
                         </thead>
                         
                         <!-- Nanti ini isi pake Database -->
-                        <tbody id="body-table">
-                            <tr>
+                        <tbody class="body-table">
+                            <tr class = 'row'>
                                 <td>D1</td>
-                                <td>Matt Dickerson</td>
+                                <td class="doctor-name">Matt Dickerson</td>
                                 <td>Jalan Anggrek</td>
                                 <td>+62 876578</td>
                                 <td>Cardiology</td>
@@ -136,9 +136,9 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class = 'row'>
                                 <td>D2</td>
-                                <td>Wiktoria</td>
+                                <td  class="doctor-name">Wiktoria</td>
                                 <td>Sirathal Mustaqim</td>
                                 <td>+62 129438</td>
                                 <td>Dermatology</td>
@@ -148,9 +148,9 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class = 'row'>
                                 <td>D3</td>
-                                <td>Trixie Byrd</td>
+                                <td  class="doctor-name">Trixie Byrd</td>
                                 <td>Jalan Cakra</td>
                                 <td>+62 738920</td>
                                 <td>Gastroenterology</td>
@@ -159,9 +159,9 @@
                                     <a href="../html/Delete.html"></a>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr  class = 'row'>
                                 <td>D4</td>
-                                <td>Brad Mason</td>
+                                <td class="doctor-name">Brad Mason</td>
                                 <td>Jalan Anggrek</td>
                                 <td>+62 1723921</td>
                                 <td>Endocrinology</td>

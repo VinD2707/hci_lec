@@ -1,5 +1,5 @@
 
-// Drop Down Logic
+
 dropdown_elements = document.getElementsByClassName('dropdown-parent')
 for (var i = 0; i < dropdown_elements.length; i++) {
     dropdown_class = dropdown_elements[i].getElementsByClassName('dropdown-text')[0]
@@ -19,11 +19,9 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 
 }
 
-
-// Charts
-let data_doctor_amount = []; // Data
-let chart_instance_doctor_amount = null; // Chart Instance
-const chart_doctor_amount = document.getElementById('doctor-amount'); // HTML Chart
+let data_doctor_amount = [];
+let chart_instance_doctor_amount = null;
+const chart_doctor_amount = document.getElementById('doctor-amount');
 
 window.addEventListener('resize', function () { doctor_amount() })
 
@@ -39,7 +37,9 @@ async function getData(){
     doctor_amount();
 }
 
+
 getData();
+
 
 function doctor_amount(){
 if(chart_instance_doctor_amount != null){
@@ -96,34 +96,21 @@ chart_instance_doctor_amount = new Chart(chart_doctor_amount, {
 }
 
 
-// Data Display
-let Doctor_data = [];
 
-async function getDoctorData(){
-    const response = await fetch('../csv/Doctors List.csv');
-    const data = await response.text();
-    const table = data.split('\n').slice(1);
+//searchh
 
-    table.forEach(element => {
-        const temp = element.split(';');
-        Doctor_data.push(temp);
-    })
-    
-}
+doctors = document.getElementsByClassName('row')
+function Search(){
+    search = document.getElementById('search')
 
-let doctorTable = document.getElementById("body-table");
+    for (var i = 0; i < doctors.length; i++) {
+        doctor_name = doctors[i].getElementsByClassName('doctor-name')[0].textContent.toLowerCase()
+        console.log(search.value.toLowerCase())
 
-
-async function addDoctor(){
-    await getDoctorData();
-    console.log(Doctor_data);
-
-    let doctor = document.createElement('tr')
-    doctorTable.appendChild(doctor);
-
-    for(var i = 0; i < Doctor_data[0].length; i++){
-        let column = document.createElement('td');
-        column.innerHTML = Doctor_data[0][i];
-        doctor.appendChild(column);
+        if(doctor_name.includes(search.value.toLowerCase())){
+            doctors[i].style.display = 'table-row'
+        }else{
+            doctors[i].style.display = 'none'
+        }
     }
 }
