@@ -102,7 +102,33 @@ async function getData(){
     
 }
 
-getData();
+
+// Initialize Window
+
+window.addEventListener('load', async function() {
+
+    // Get the Data
+    await getData();
+
+    // Calculate Billings Amount Update Visualization
+    const billingsbubble = document.getElementById('billingsbubble');
+    const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
+    let temp = 0
+    if (typeof billings_bar_data !== 'undefined' && billings_bar_data.length > 0) {
+        let data = billings_bar_data[0]
+
+        for(i = 0; i < data.length; i++){
+                temp += parseInt(data[i])
+        }
+    }
+    
+
+    total_billing.innerHTML = temp.toLocaleString()
+
+})
+
+
+
 
 
 function getdates(startDate, dateNumber) {
@@ -444,27 +470,10 @@ window.addEventListener('load', function() {
 })
 
 
-// update total billings
-
-
-window.addEventListener('load', function() {
-
-    const billingsbubble = document.getElementById('billingsbubble');
-    const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
-
-    let temp = 0
-    for(i = 0; i < billings_bar_data[0].length; i++){
-            temp += parseInt(billings_bar_data[0][i])
-            console.log(temp)
-        }
-
-    total_billing.innerHTML = temp.toLocaleString()
-    
-    
-
-})
 
 // dateinputs 
+
+
 
 dateinputs = document.getElementsByClassName('date')
 
