@@ -19,3 +19,16 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 
 }
 
+
+const form = document.querySelector(".container form");
+form.addEventListener('submit', saveData);
+
+function saveData(ev){
+    ev.preventDefault();
+    const form = ev.target;
+    const formdata = new FormData(form);
+    form.reset()
+    document.getElementById("name").focus();
+    console.log(form);
+    // console.table(Array.from(formdata.values()));
+}

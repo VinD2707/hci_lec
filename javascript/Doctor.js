@@ -94,3 +94,23 @@ chart_instance_doctor_amount = new Chart(chart_doctor_amount, {
     }
 });
 }
+
+
+
+//searchh
+
+doctors = document.getElementsByClassName('row')
+function Search(){
+    search = document.getElementById('search')
+
+    for (var i = 0; i < doctors.length; i++) {
+        doctor_name = doctors[i].getElementsByClassName('doctor-name')[0].textContent.toLowerCase()
+        console.log(search.value.toLowerCase())
+
+        if(doctor_name.includes(search.value.toLowerCase())){
+            doctors[i].style.display = 'table-row'
+        }else{
+            doctors[i].style.display = 'none'
+        }
+    }
+}
