@@ -158,7 +158,7 @@ img{
   display: flex;
   flex-direction: column;
   padding: 2.5em;
-  margin: 10% 10% 10% 10%;
+  margin: 5% 10% 10% 10%;
   /* margin: 5em 10em 10em 10em; */
   background-color: white;
 }
