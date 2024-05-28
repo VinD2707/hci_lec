@@ -18,7 +18,7 @@ for (var i = 0; i < dropdown_elements.length; i++) {
     }(i)); // Immediately invoke the function with the current value of i as an argument. idk it just works
 
 }
-
+// Dates
 let selected_start_date = null
 let selected_end_date = null
 // Charts
@@ -33,7 +33,7 @@ let department_instance = null
 const department_chart = document.getElementById('departmentratio'); // HTML Chart
 
 let billings_data = []
-let billings_labels = []
+let billings_dates = []
 let billings_instance = null
 const billings_chart = document.getElementById('billings'); // HTML Chart
 
@@ -41,6 +41,13 @@ let billings_bar_data = []
 let billings_bar_labels = []
 let billings_bar_instance = null
 const billings_bar_chart = document.getElementById('billingsdepartmentratio'); // HTML Chart
+
+// Top Statistics
+let appointmentnumber = 0
+let averagewaittime = 0
+
+//total billings
+let totalbillings = 0
 
 window.addEventListener('resize', function () { appointment(); department(); billing(); billing_pie();})
 
@@ -72,11 +79,11 @@ async function getData(){
     })
 
     // billing
-    response = await fetch('../csv/Billings.csv');
+    response = await fetch('../csv/Billings Dated2.csv');
     data = await response.text();
     table = data.split('\n');
 
-    billings_labels = table[0].split(';')
+    billings_dates = table[0].split(';')
 
     table.slice(1).forEach(element => {
         const temp = element.split(';');
@@ -98,7 +105,6 @@ async function getData(){
         billings_bar_data.push(temp);
     })
 
-    console.log(billings_bar_data)
     appointment();  
     department();
     billing();
@@ -107,23 +113,7 @@ async function getData(){
 }
 
 
-window.addEventListener('load', async function() {
-    await getData();
-
-    const billingsbubble = document.getElementById('billingsbubble');
-    const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
-
-    let temp = 0
-    for(i = 0; i < billings_bar_data[0].length; i++){
-            temp += parseInt(billings_bar_data[0][i])
-            console.log(temp)
-        }
-
-    total_billing.innerHTML = temp.toLocaleString()
-    
-    
-
-})
+getData();
 
 
 function parseDate(dateString) {
@@ -146,11 +136,15 @@ function getdates(startDate, dateNumber) {
     if(selected_end_date===null || selected_start_date === null){return null}  
     const dateList = [];
     const currentDate = new Date(startDate); 
+    var options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+
 
     for (let i = 0; i < dateNumber; i++) {
         const date = new Date(currentDate); 
         date.setDate(date.getDate() + i); 
-        dateList.push(date.toLocaleDateString()); 
+        dateList.push(date.toLocaleDateString('en-GB', options).split('/')
+        .map(part => parseInt(part, 10))
+        .join('/')); 
     }
 
     return dateList;
@@ -160,11 +154,11 @@ function getDataInRange(dataArray, dateArray, startDate, endDate) {
     const start =parseDate(startDate);
     const end = parseDate(endDate);
     const dataInRange = [];
-    console.log('start',start)
+
+    appointmentnumber = 0;
 
     dateArray.forEach((dateString, index) => {
         const date = parseDate(dateString);
-        console.log('date', date)
         if (date >= start && date <= end) {
             dataInRange.push(dataArray[index]);
         }
@@ -173,7 +167,31 @@ function getDataInRange(dataArray, dateArray, startDate, endDate) {
     return dataInRange;
 }
 
+function getTotalAppointments(apponitmentsArray, dateArray, startDate, endDate){
+    const start = parseDate(startDate);
+    const end = parseDate(endDate);
 
+    dateArray.forEach((dateString, index) => {
+        const date = parseDate(dateString);
+        if (date >= start && date <= end) {
+            appointmentnumber += parseInt(apponitmentsArray[index])
+
+        }
+    })
+}
+
+function getTotalBillings(billingsArray, dateArray, startDate, endDate){
+    const start = parseDate(startDate);
+    const end = parseDate(endDate);
+
+
+    dateArray.forEach((dateString, index) => {
+        const date = parseDate(dateString);
+        if (date >= start && date <= end) {
+            totalbillings += parseInt( billingsArray[index])
+        }
+    })
+}
 
 
 function appointment(){
@@ -183,12 +201,24 @@ if(appointment_instance != null){
 
 
 
+
+
 const datesList = getdates(parseDate(selected_start_date), getDaysBetweenDates(selected_start_date, selected_end_date) + 1);
+const data = getDataInRange(appointment_data[0], appointment_dates, selected_start_date, selected_end_date)
 
-console.log('fullarray',appointment_data[0])
-console.log('dates subarray', getDataInRange(appointment_data[0], appointment_dates, selected_start_date, selected_end_date))
+// Stats
 
+getTotalAppointments(appointment_data[0], appointment_dates, selected_start_date, selected_end_date)
+appointment_total = document.getElementById('totalappointments')
+appointment_total.innerHTML = appointmentnumber
 
+if(selected_end_date !== null & selected_start_date !== null){
+    averagewaittime = document.getElementById('averagewaittime')
+    averagewaittime.innerHTML =  Math.floor(Math.random() * (45 - 34 + 1)) + 34 + ' mins';
+
+}
+
+// Chart
 appointment_instance = new Chart(appointment_chart, {
     maintainAspectRatio: false,
     type: 'line',
@@ -196,7 +226,7 @@ appointment_instance = new Chart(appointment_chart, {
     labels: datesList ,
     datasets: [{
         label: 'Doctor Status',
-        data: getDataInRange(appointment_data[0], appointment_dates, selected_start_date, selected_end_date),
+        data: data,
         backgroundColor: 'rgb(0,0,0)',
         borderWidth: 3,
         
@@ -220,10 +250,11 @@ appointment_instance = new Chart(appointment_chart, {
             y: {
                 ticks: {
                     font: {
-                        size: 22
-                        
-                    }
-                }
+                        size: 22,
+                    },
+
+                },
+                min: 0
             }
             
         },
@@ -334,19 +365,28 @@ function department(){
         if(billings_instance != null){
             billings_instance.destroy();
         };
+
+        //statistics
+        if(selected_end_date !== null & selected_start_date !== null){
+            getTotalBillings(billings_data[0], billings_dates, selected_start_date, selected_end_date);
+            const billingsbubble = document.getElementById('billingsbubble');
+            const total_billing = billingsbubble.getElementsByClassName('statvalue')[0];
+            total_billing.innerHTML = totalbillings.toLocaleString()
+
+        }
         
-        
-        const startDate = new Date('2024-05-24');
-        const datesList = getdates(startDate, (billings_data[0].length));
+        let datesbilling = getdates(parseDate(selected_start_date), getDaysBetweenDates(selected_start_date, selected_end_date) + 1);
+        const data = getDataInRange(billings_data[0], billings_dates, selected_start_date, selected_end_date)
+
         
         billings_instance = new Chart(billings_chart, {
             maintainAspectRatio: false,
             type: 'line',
             data: {
-            labels: datesList ,
+            labels: datesbilling ,
             datasets: [{
                 label: 'Doctor Status',
-                data: billings_data[0],
+                data: data,
                 backgroundColor: 'rgb(0,0,0)',
                 borderWidth: 2,
                 
@@ -373,7 +413,8 @@ function department(){
                                 size: 22
                                 
                             }
-                        }
+                        },
+                        min: 0
                     }
                     
                 },
@@ -533,7 +574,6 @@ function convertDateFormat(inputDate) {
     // Rearrange the components to the dd/mm/yyyy format
     var formattedDate = parts[2] + '/' + parts[1] + '/' + parts[0];
 
-    console.log(parts)
     return formattedDate;
 
 }
@@ -543,15 +583,17 @@ function changeformat_start(event){
     let element = event.target
 
     let current_format = element.value
-    console.log(current_format)
-    console.log(convertDateFormat(current_format))
+
     element.type = ''
 
     element.value = convertDateFormat(current_format)
 
     selected_start_date = convertDateFormat(current_format)
 
+    
     appointment()
+    billing()
+
     
 }
 
@@ -559,8 +601,7 @@ function changeformat_end(event){
     let element = event.target
 
     let current_format = element.value
-    console.log(current_format)
-    console.log(convertDateFormat(current_format))
+
     element.type = ''
 
     element.value = convertDateFormat(current_format)
@@ -568,6 +609,7 @@ function changeformat_end(event){
     selected_end_date = convertDateFormat(current_format)
 
     appointment()
+    billing()
 
 
 }
