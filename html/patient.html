@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient</title>
+    <link rel="stylesheet" href="../css/patient.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="background">
+        <section id="menu">
+            <div class="sidebar">
+                <div class="head-sidebar">
+                    <img src="../assets/Logo.svg" alt="logo">
+                    <header>Kasih Hospital</header>
+                </div>
+        
+                <ul class="features">
+                    <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                    <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
+                    <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
+                    <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/users-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Employees &#9660;</p>
+
+                            </div>
+                            
+                            <ul class="dropdown">
+                                <li><a href="../html/Doctor.html">Doctors</a></li>
+                                <li><a href="../html/Nurses.html">Nurses</a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/cog-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Master &#9660;</p>
+                            </div>
+                            <ul class="dropdown">
+                                <li><a href="#">Specialization</a></li>
+                            </ul>   
+                        </div>
+                        
+                    </li>
+                </ul>
+                <div class="logout">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+
+            <div class="isi">
+                <div class="top-menu">
+                    <div>
+                        <h2>Patient</h2>
+                    </div>
+                </div>
+
+                <div class="total-spesialization">
+                    <p>Total Patient</p>
+                    <h3>3</h3>
+                </div>
+
+                <div class="background2">
+                    <div class="container">
+                        <div class="cont-filter">
+                            <div class="normal-text">
+                                <p>Show</p>
+                                <select class="numberDropdown">
+                                    <option value="">Select</option>
+                                    <option value="1">5</option>
+                                    <option value="2">10</option>
+                                    <option value="3">20</option>
+                                    <option value="4">30</option>
+                                    <option value="5">50</option>
+                                </select>
+                                <p>Entries</p>
+                            </div>
+                            <div class="search-container">
+                                <input type="search" id="search" name="search" class="search-input" placeholder="Search..." oninput="Search()">
+                            </div>
+                        </div>
+                        
+                        <div class="new-button">
+                            <a href="../html/New-Patient.html">
+                                <button class="new">+&nbsp;New patient</button>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <table class="wrapper">
+                        <thead class="header-table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone No.</th>
+                                <th>DOB</th>
+                                <th>Registered At</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- Nanti ini isi pake Database -->
+                        <tbody class="body-table">
+                            <tr class= 'row'>
+                                <td>P1</td>
+                                <td class="name-sp">Mamat Syahputra</td>
+                                <td>Jl. Anggrek</td>
+                                <td>+62 821556</td>
+                                <td>13/05/2004</td>
+                                <td>20/02/2022</td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Patient.html"></a>
+                                    <a href="../html/Delete-Patient.html"></a>
+                                </td>
+                            </tr>
+
+                            <tr class='row'>
+                                <td>P2</td>
+                                <td class="name-sp">Syahrudin</td>
+                                <td>Jl. Syahdan</td>
+                                <td>+62 821774</td>
+                                <td>13/05/2005</td>
+                                <td>20/02/2021</td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Patient.html"></a>    
+                                    <a href="../html/Delete-Patient.html"></a>
+                                </td>
+                            </tr>
+
+                            <tr class='row'>
+                                <td>P3</td>
+                                <td class="name-sp">Matt Dickerson</td>
+                                <td>Jl. Wisma Raja</td>
+                                <td>+62 825886</td>
+                                <td>13/05/2003</td>
+                                <td>20/02/2020</td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Patient.html"></a>
+                                    <a href="../html/Delete-Patient.html"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+        
+                    </table>
+                </div>
+                
+
+            </div>
+
+    </section>
+    </div>
+    
+</body>
+<script src="../javascript/Patient.js"></script>
+
+</html>
