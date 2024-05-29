@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="../css/Appointment.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <div class="background">
+        <section id="menu">
+            <div class="sidebar">
+                <div class="head-sidebar">
+                    <img src="../assets/Logo.svg" alt="logo">
+                    <header>Kasih Hospital</header>
+                </div>
+        
+                <ul class="features">
+                    <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                    <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
+                    <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
+                    <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/users-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Employees &#9660;</p>
+
+                            </div>
+                            
+                            <ul class="dropdown">
+                                <li><a href="#">Doctors</a></li>
+                                <li><a href="#">Nurses</a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/cog-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Master &#9660;</p>
+                            </div>
+                            <ul class="dropdown">
+                                <li><a href="#">Spesialization</a></li>
+                            </ul>   
+                        </div>
+                        
+                    </li>
+                </ul>
+                <div class="logout">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+
+
+            <div class="isi">
+                <div class="top-menu">
+                    <div>
+                        <h2>Appointment</h2>
+                    </div>
+                </div>
+
+
+                <div id = 'dateselector'>
+                    <div id = 'startdate'>
+                        <h4>Start Date</h4>
+                        <input type="date" placeholder="Select Date" onchange="changeformat(event)">
+                    </div>
+                    <div id = 'dash'></div>
+                    <div id = 'enddate'>
+                        <h4>End Date</h4>
+                        <input type="date" placeholder="Select Date" onchange="changeformat(event)">
+                    </div>
+                </div>
+
+                <div class="wrapper3">
+                    <div class="total-spesialization">
+                        <p>Total Spesialization</p>
+                        <h3>3</h3>
+                    </div>
+                    <div class="done">
+                        <p>Done</p>
+                        <h1>20</h1>
+                    </div>
+                    <div class="pending">
+                        <p>Pending</p>
+                        <h1>15</h1>
+                    </div>
+                    <div class="cancelled">
+                        <p>Cancelled</p>
+                        <h1>15</h1>
+                    </div>
+                </div>
+                
+
+
+
+                <div class="background2">
+                    <div class="container">
+                        <div class="cont-filter">
+                            <div class="normal-text">
+                                <p>Show</p>
+                                <select class="numberDropdown">
+                                    <option value="">Select</option>
+                                    <option value="1">5</option>
+                                    <option value="2">10</option>
+                                    <option value="3">20</option>
+                                    <option value="4">30</option>
+                                    <option value="5">50</option>
+                                </select>
+                                <p>Entries</p>
+                            </div>
+                            <div class="search-container">
+                                <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                            </div>
+
+                            <div class="new-button">
+                                <a href="../html/New-Appointment.html">
+                                    <button class="new">+&nbsp;New Appointment</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <table class="wrapper">
+                        <thead class="header-table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Patien</th>
+                                <th>Doctor</th>
+                                <th>Spesialization</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        
+                        <!-- Nanti ini isi pake Database -->
+                        <tbody class="body-table">
+                            <tr>
+                                <td>P1</td>
+                                <td>Matt Dickerson</td>
+                                <td>Matt Dickerson</td>
+                                <td>Nerve</td>
+                                <td>13/05/2022</td>
+                                <td>12:00 AM</td>
+                                <td>
+                                    <div class = 'tablestatus'>
+                                        Done
+                                    </div>
+                                </td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Appointment.html"></a>
+                                    <a href="../html/Delete-Appointment.html"></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>P2</td>
+                                <td>Wiktoria</td>
+                                <td>Wiktoria</td>
+                                <td>Pediatrician</td>
+                                <td>22/05/2022</td>
+                                <td>12:00 AM</td>
+                                <td>
+                                    <div class = 'tablestatus'>
+                                        Done
+                                    </div>
+                                </td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Appointment.html"></a>
+                                    <a href="../html/Delete-Appointment.html"></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>P3</td>
+                                <td>Trixia Byrd</td>
+                                <td>Trixia Byrd</td>
+                                <td>Pediatrician</td>
+                                <td>15/06/2022</td>
+                                <td>12:00 AM</td>
+                                <td>
+                                    <div class = 'tablestatus'>
+                                        Pending
+                                    </div>
+                                </td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Appointment.html"></a>
+                                    <a href="../html/Delete-Appointment.html"></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>P4</td>
+                                <td>Brad Mason</td>
+                                <td>Brad Mason</td>
+                                <td>Nerve</td>
+                                <td>19/06/2022</td>
+                                <td>12:00 AM</td>
+                                <td>
+                                    <div class = 'tablestatus'>
+                                        Pending
+                                    </div>
+                                </td>
+                                <td class="case3">
+                                    <a href="../html/Edit-Appointment.html"></a>
+                                    <a href="../html/Delete-Appointment.html"></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+        
+                    </table>
+                </div>
+                
+
+            </div>
+
+    </section>
+    </div>
+    
+</body>
+<script src="../javascript/Billings.js"></script>
+
+</html>
