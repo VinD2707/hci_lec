@@ -119,7 +119,7 @@
                                 <p>Entries</p>
                             </div>
                             <div class="search-container">
-                                <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                                <input type="search" id="search" name="search" class="search-input" placeholder="Search..." oninput="Search()">
                             </div>
 
                             <div class="new-button">
@@ -134,9 +134,9 @@
                         <thead class="header-table">
                             <tr>
                                 <th>ID</th>
-                                <th>Patien</th>
+                                <th>Patient</th>
                                 <th>Doctor</th>
-                                <th>Spesialization</th>
+                                <th>Specialization</th>
                                 <th>Date</th>
                                 <th>Time</th>
                                 <th>Status</th>
@@ -146,10 +146,10 @@
                         
                         <!-- Nanti ini isi pake Database -->
                         <tbody class="body-table">
-                            <tr>
+                            <tr class= 'row'>
                                 <td>P1</td>
-                                <td>Matt Dickerson</td>
-                                <td>Matt Dickerson</td>
+                                <td class="name-pt">Matt Dickerson</td>
+                                <td>Ahmed</td>
                                 <td>Nerve</td>
                                 <td>13/05/2022</td>
                                 <td>12:00 AM</td>
@@ -164,9 +164,9 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class= 'row'>
                                 <td>P2</td>
-                                <td>Wiktoria</td>
+                                <td class="name-pt">Wiktoria</td>
                                 <td>Wiktoria</td>
                                 <td>Pediatrician</td>
                                 <td>22/05/2022</td>
@@ -182,9 +182,9 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class= 'row'>
                                 <td>P3</td>
-                                <td>Trixia Byrd</td>
+                                <td class="name-pt">Trixia Byrd</td>
                                 <td>Trixia Byrd</td>
                                 <td>Pediatrician</td>
                                 <td>15/06/2022</td>
@@ -200,9 +200,9 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class= 'row'>
                                 <td>P4</td>
-                                <td>Brad Mason</td>
+                                <td class="name-pt">Brad Mason</td>
                                 <td>Brad Mason</td>
                                 <td>Nerve</td>
                                 <td>19/06/2022</td>
@@ -230,6 +230,6 @@
     </div>
     
 </body>
-<script src="../javascript/Billings.js"></script>
+<script src="../javascript/appointment.js"></script>
 
 </html>
