@@ -72,12 +72,12 @@
                 <div id = 'dateselector'>
                     <div id = 'startdate'>
                         <h4>Start Date</h4>
-                        <input type="date" placeholder="Select Date" onchange="changeformat(event)">
+                        <input class="date" type="" placeholder="Select Date" onchange="changeformat_start(event)">
                     </div>
                     <div id = 'dash'></div>
                     <div id = 'enddate'>
                         <h4>End Date</h4>
-                        <input type="date" placeholder="Select Date" onchange="changeformat(event)">
+                        <input class="date" type="" placeholder="Select Date" onchange="changeformat_end(event)">
                     </div>
                 </div>
 
@@ -87,22 +87,12 @@
                     <div class="chart">
 
                         <div class="line-chart">                         
-                            <canvas id="appointments" aria-label="Hello ARIA World" role="img"></canvas>
+                            <canvas id="billings" aria-label="Hello ARIA World" role="img"></canvas>
 
-                            <div id = 'bottomsection'>
-                                <div class = 'canvaswrapper'> 
-                                    <canvas id="departmentratio" aria-label="Hello ARIA World" role="img"></canvas>
-                                </div>
-                                <div id = 'appointmentwrapper'>
-                                    
-                                </div>
-                            </div>   
                         </div>
 
                         <div class="barchart">
-                            <div class = 'canvaswrapper'> 
-                                <canvas id="billingsdepartmentratio" aria-label="Hello ARIA World" role="img"></canvas>
-                            </div>
+                            <canvas id="billingsdepartmentratio" aria-label="Hello ARIA World" role="img"></canvas>
                         </div>
 
                     </div>
@@ -143,7 +133,7 @@
                                 <p>Entries</p>
                             </div>
                             <div class="search-container">
-                                <input type="search" id="search" name="search" class="search-input" placeholder="Search...">
+                                <input type="search" id="search" name="search" class="search-input" placeholder="Search..." onchange="Search()">
                             </div>
                         </div>
                     </div>
@@ -160,8 +150,8 @@
                         
                         <!-- Nanti ini isi pake Database -->
                         <tbody class="body-table">
-                            <tr>
-                                <td>A1</td>
+                            <tr class = 'row'>
+                                <td  class="billingid">A1</td>
                                 <td>13/05/2022</td>
                                 <td>Rp 150.000</td>
                                 <td class="case3">
@@ -170,8 +160,8 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>A2</td>
+                            <tr class = 'row'>
+                                <td  class="billingid">A2</td>
                                 <td>22/05/2022</td>
                                 <td>Rp 150.000</td>
                                 <td class="case3">
@@ -180,8 +170,8 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>A3</td>
+                            <tr class = 'row'>
+                                <td  class="billingid">A3</td>
                                 <td>15/06/2022</td>
                                 <td>Rp 150.000</td>
                                 <td class="case3">
@@ -190,8 +180,8 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>A4</td>
+                            <tr class = 'row'>
+                                <td  class="billingid">A4</td>
                                 <td>06/09/2022</td>
                                 <td>Rp 150.000</td>
                                 <td class="case3">
@@ -200,8 +190,8 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>A5</td>
+                            <tr class = 'row'>
+                                <td  class="billingid">A5</td>
                                 <td>25/09/2022</td>
                                 <td>Rp 150.000</td>
                                 <td class="case3">

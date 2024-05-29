@@ -207,6 +207,10 @@ body{
     padding-left: 5%;
     padding-right: 5%;
     margin-left: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
@@ -352,6 +356,7 @@ body{
 
 
 .background2 {
+  width: 90%;
     margin-top: 4em;
     background-color: white;
     padding: 1.1em;
@@ -403,27 +408,61 @@ body{
 /* CHARTS */
 
 .wrapper-chart{
+  width: 90%;
+  height: 50em;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: 100px;
 }
 
 .chart{
+  width: 100%;
+  height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.line-chart, .barchart, .growth-difference, .total-amount, .most-profitable-day{
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
+.line-chart, .barchart{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+
+  background-color: white;
 }
+
+canvas{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+.growth-difference, .total-amount, .most-profitable-day{
+  background-color: white;
+  height: 8em;
+  width: 20em;
+
+
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+
+  }
 
 .description{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 25px;
 }

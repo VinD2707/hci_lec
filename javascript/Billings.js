@@ -18,28 +18,36 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 }
 
 // Charts
-let appointment_data = []; // Data
-let appointment_instance = null; // Chart Instance
-const appointment_chart = document.getElementById('appointments'); // HTML Chart
+
+let billings_data = []
+let billings_dates = []
+let billings_instance = null
+const billings_chart = document.getElementById('billings'); // HTML Chart
 
 let billings_bar_data = []
 let billings_bar_labels = []
-let billings_bar_instance = null    
+let billings_bar_instance = null
 const billings_bar_chart = document.getElementById('billingsdepartmentratio'); // HTML Chart
 
-window.addEventListener('resize', function () { appointment(); billing_pie();})
+
+
+window.addEventListener('resize', function () { billing(); billing_bar();})
 
 
 async function getData(){
-    // appointmetns
-    let response = await fetch('../csv/Appointments.csv');
-    let data = await response.text();
-    let table = data.split('\n').slice(1);
+    // billing
+    response = await fetch('../csv/Billings Dated2.csv');
+    data = await response.text();
+    table = data.split('\n');
+
+    billings_dates = table[0].split(';')
 
     table.slice(1).forEach(element => {
         const temp = element.split(';');
-        appointment_data.push(temp);
+
+        billings_data.push(temp);
     })
+
 
 
     // billing per department
@@ -56,29 +64,90 @@ async function getData(){
 
     console.log(billings_bar_data)
     // appointment();  
-    billing_pie();
-    appointment();
+    billing();
+    billing_bar();
+    // appointment();
 }
 
 getData();
 
-function appointment(){
-    if(appointment_instance != null){
-        appointment_instance.destroy();
+// Dates
+let selected_start_date = null
+let selected_end_date = null
+
+function parseDate(dateString) {
+    if(dateString === null){return null}
+    const [day, month, year] = dateString.split('/').map(Number);
+    // Note: Months are 0-based in JavaScript Date, so subtract 1 from month
+    return new Date(year, month - 1, day);
+}
+
+function getDaysBetweenDates(startDate, endDate) {
+    const start = parseDate(startDate);
+    const end = parseDate(endDate);
+    const timeDifference = end - start;
+    const dayDifference = timeDifference / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+    return dayDifference;
+}
+
+
+function getdates(startDate, dateNumber) {
+    if(selected_end_date===null || selected_start_date === null){return null}  
+    const dateList = [];
+    const currentDate = new Date(startDate); 
+    var options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+
+
+    for (let i = 0; i < dateNumber; i++) {
+        const date = new Date(currentDate); 
+        date.setDate(date.getDate() + i); 
+        dateList.push(date.toLocaleDateString('en-GB', options).split('/')
+        .map(part => parseInt(part, 10))
+        .join('/')); 
+    }
+
+    return dateList;
+}
+
+function getDataInRange(dataArray, dateArray, startDate, endDate) {
+    const start =parseDate(startDate);
+    const end = parseDate(endDate);
+    const dataInRange = [];
+
+    appointmentnumber = 0;
+
+    dateArray.forEach((dateString, index) => {
+        const date = parseDate(dateString);
+        if (date >= start && date <= end) {
+            dataInRange.push(dataArray[index]);
+        }
+    });
+
+    return dataInRange;
+}
+
+function billing(){
+    if(billings_instance != null){
+        billings_instance.destroy();
     };
 
-    appointment_instance = new Chart(appointment_chart, {
+    
+    let datesbilling = getdates(parseDate(selected_start_date), getDaysBetweenDates(selected_start_date, selected_end_date) + 1);
+    const data = getDataInRange(billings_data[0], billings_dates, selected_start_date, selected_end_date)
+
+    
+    billings_instance = new Chart(billings_chart, {
         maintainAspectRatio: false,
         type: 'line',
         data: {
-        labels: datesList ,
+        labels: datesbilling ,
         datasets: [{
             label: 'Doctor Status',
-            data: appointment_data[0],
+            data: data,
             backgroundColor: 'rgb(0,0,0)',
-            borderWidth: 3,
+            borderWidth: 2,
             
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(0,0,0)',
             tension: 0.1
         }]
         },
@@ -101,37 +170,38 @@ function appointment(){
                             size: 22
                             
                         }
-                    }
+                    },
+                    min: 0
                 }
                 
             },
-
-                
+    
+                  
             
-            aspectRatio: 2.7,
+            aspectRatio: 2,
             responsive: true,
             plugins: {
                 
-
+    
             legend: {
                 display: false
             },
             title:{
                 display:true,
-                // text: "Doctors in Each Department",
+                text: "Billings",
                 font:{
                 size: 28
                 }
             },
             
         },
-    
+       
         }
     });
-}
+    }
 
 
-function billing_pie(){
+function billing_bar(){
     if(billings_bar_instance != null){
         billings_bar_instance.destroy();
     };
@@ -174,7 +244,7 @@ function billing_pie(){
             },
                   
             
-            aspectRatio: 1.3,
+            aspectRatio: 1.9,
             responsive: true,
             plugins: {
     
@@ -195,8 +265,8 @@ function billing_pie(){
     });
     }
 
-billing_pie();
-appointment();
+// billing_pie();
+// appointment();
 
 // GUA GATAU CARA PAKE YANG DIATAS JADINYA GUA PAKE YANG INI
 
@@ -268,3 +338,82 @@ appointment();
 
 
 //                         });
+
+dateinputs = document.getElementsByClassName('date')
+
+for(i=0; i< dateinputs.length; i++){
+    dateinputs[i].addEventListener('focusin', function(){
+        this.type = 'datetime-local'
+        this.style.color = 'black'
+        this.showPicker()
+    })
+
+    dateinputs[i].addEventListener('focusout', function(){
+        this.type = ''
+    })
+}
+
+
+function convertDateFormat(inputDate) {
+    var parts = inputDate.split(/[T:-]/);
+
+    // Rearrange the components to the dd/mm/yyyy format
+    var formattedDate = parts[2] + '/' + parts[1] + '/' + parts[0];
+
+    return formattedDate;
+
+}
+
+
+function changeformat_start(event){
+    let element = event.target
+
+    let current_format = element.value
+
+    element.type = ''
+
+    element.value = convertDateFormat(current_format)
+
+    selected_start_date = convertDateFormat(current_format)
+
+    
+    billing_bar()
+    billing()
+
+    
+}
+
+function changeformat_end(event){
+    let element = event.target
+
+    let current_format = element.value
+
+    element.type = ''
+
+    element.value = convertDateFormat(current_format)
+
+    selected_end_date = convertDateFormat(current_format)
+
+    billing_bar()
+    billing()
+
+
+}
+
+
+
+billings = document.getElementsByClassName('row')
+function Search(){
+    search = document.getElementById('search')
+
+    for (var i = 0; i < billings.length; i++) {
+        billingid = billings[i].getElementsByClassName('billingid')[0].textContent.toLowerCase()
+        console.log(billingid)
+
+        if(billingid.includes(search.value.toLowerCase())){
+            billings[i].style.display = 'table-row'
+        }else{
+            billings[i].style.display = 'none'
+        }
+    }
+}
