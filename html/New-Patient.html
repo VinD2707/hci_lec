@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New - Patient</title>
+    <link rel="stylesheet" href="../css/New-Spesialization.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-xxzQGERXS00kBWX6y5/7C3FUEswDJKvxsggmfrt15ngDIjAhy9qFIoK5cMIV" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="background">
+        <section id="menu">
+            <div class="sidebar">
+                <div class="head-sidebar">
+                    <img src="../assets/Logo.svg" alt="logo">
+                    <header>Kasih Hospital</header>
+                </div>
+        
+                <ul class="features">
+                    <li><a href="#"><img src="../assets/home-solid.svg" alt="">Dashboard</a></li>
+                    <li><a href="#"><img src="../assets/calendar-check-solid.svg" alt="">Appointment</a></li>
+                    <li><a href="#"><img src="../assets/th-large-solid.svg" alt="">Patient</a></li>
+                    <li><a href="#"><img src="../assets/credit-card-regular.svg" alt="">Finance</a></li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/users-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Employees &#9660;</p>
+                            </div>
+                            
+                            <ul class="dropdown">
+                                <li><a href="#">Doctors</a></li>
+                                <li><a href="#">Nurses</a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <div class = "dropdown-parent" href="#">
+                            <div class = 'dropdown-head'>
+                                <img src="../assets/cog-solid.svg" alt="">
+                                <p class = 'dropdown-text'>Master &#9660;</p>
+                            </div>
+                            <ul class="dropdown">
+                                <li><a href="#">Spesialization</a></li>
+                            </ul>   
+                        </div>
+                        
+                    </li>
+                </ul>
+                <div class="logout">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+
+            <div class="isi">
+                <div class="top-menu">
+                    <div>
+                        <h2>New Patient</h2>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <form action="" method="get" class="wrapper" id="delete-form">
+                      <div class="title"><h1>Add New Spesialization</h1></div> 
+                      <div class="none"></div>
+                      <div class="form-group-1">
+                        <label for="name">Name <span style="color: red;">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Pulmonology">
+                      </div>
+
+                      <div class="form-group">
+                        <!--  -->
+                      </div>
+
+                      <div class="title2"><h1></h1></div>
+                      <div class="none"></div>
+                      <div class="form-group">
+                        <label for="username">Username <span style="color: red;">*</span></label>
+                        <input type="text" id="username" name="username">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password <span style="color: red;">*</span></label>
+                        <input type="password" id="password" name="password">
+                      </div>
+                      <div id="none"></div>
+                        
+
+
+                        <div class="submit-btn">
+                            <button type="submit" class="btn">Save</button>
+                        </div>
+                    </form>
+
+
+                </div>
+                
+
+            </div>
+
+    </section>
+    </div>
+    
+</body>
+<script src="../javascript/New-Spesialization.js"></script>
+
+</html>
