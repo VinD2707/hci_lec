@@ -50,7 +50,7 @@ chart_instance_doctor_amount = new Chart(chart_doctor_amount, {
     maintainAspectRatio: false,
     type: 'bar',
     data: {
-    labels: ['Nerve', 'Pediacitrian', 'Orthopedic'],
+    labels: ['Nerve', 'Pediatrics', 'Orthopedic'],
     datasets: [{
         label: 'Doctor Status',
         data: data_doctor_amount[0],

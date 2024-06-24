@@ -75,8 +75,12 @@
                         <div class="form-group">
                             <label for="ID">id *</label>
                             <input type="text" id="ID" name="ID" disabled placeholder="D1">
-                            <label for="specialization">Specialization *</label>
-                            <input type="text" id="specialization" name="specialization" disabled placeholder="Nerve">
+                            <label for="specialization">Specialization</label>
+                            <select id="specialization" name="specialization" disabled>
+                                <option value="Nerve">Nerve</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedic">Orthopedic</option>
+                            </select>
                         </div>
                         <div class="submission-group">
 
@@ -88,9 +92,9 @@
                                     <label for="delettion-password">Password *</label>
                                     <input type="text" id="delettion-password" name="delettion-password">
                                     <div class="confirmation-section">
-                                        <button type="submit" id="cancel-btn">Cancel</button>
+                                        <button type="button" id="cancel-btn">Cancel</button>
 
-                                        <button type="submit" id="delete-btn">Delete</button>
+                                        <button type="submit" id="delete-btn">Submit</button>
                                     </div>
                                 </div>
                             </div>

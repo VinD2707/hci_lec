@@ -1,5 +1,4 @@
 
-
 dropdown_elements = document.getElementsByClassName('dropdown-parent')
 for (var i = 0; i < dropdown_elements.length; i++) {
     dropdown_class = dropdown_elements[i].getElementsByClassName('dropdown-text')[0]
@@ -19,22 +18,18 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 
 }
 
-
-const form = document.querySelector(".container form");
-form.addEventListener('submit', saveData);
-
-function saveData(ev){
-    ev.preventDefault();
-    const form = ev.target;
-    const formdata = new FormData(form);
-    form.reset()
-    document.getElementById("name").focus();
-    console.log(form);
-    // console.table(Array.from(formdata.values()));
-}
+document.getElementById('cancel-btn').addEventListener('click', function(event) {
+    window.location.href = '../html/nurse.html'; 
+})
 
 function validateForm(event) {
     event.preventDefault(); // To prevent reset the forms
+    const password = document.getElementById('delettion-password').value;
+
+    if (password === '') {
+        alert('Password cannot be empty!');
+        return;
+    }
     
     
     const confirmUser = confirm("Are you sure you want to submit?")
@@ -42,15 +37,14 @@ function validateForm(event) {
         return;
     }
 
-    const newdoctorform = document.getElementById('newdoctorform')
+    const deleteForm = document.getElementById('delete-form')
 
     setTimeout(() => {
         alert("Your data has been successfully deleted.");
-        newdoctorform.submit();
+        deleteForm.submit();
         window.location.href = 'Doctor.html';
     }, 100); // Delay to ensure the alert is shown after the form is processed
     
 }
 
-
-document.getElementById('newdoctorform').addEventListener('submit', validateForm);
+document.getElementById('delete-form').addEventListener('submit', validateForm);

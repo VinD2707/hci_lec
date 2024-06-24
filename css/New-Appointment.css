@@ -105,7 +105,7 @@ body{
 }
 
 .dropdown{
-    display: none;
+    display: block;
     list-style-type: block;
     padding-left: 3.2em;
     padding-top: 1.2em;
@@ -219,6 +219,14 @@ body{
   input[type="number"],
   input[type="password"],
   input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    background-color: white;
+  }
+
+  select{
     width: 100%;
     padding: 10px;
     border: 2px solid black;

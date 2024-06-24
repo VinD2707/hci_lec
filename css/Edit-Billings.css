@@ -100,7 +100,7 @@ body{
   }
   
   .dropdown {
-    display: none;
+    display: block;
     list-style-type: block;
     padding-left: 3.2em;
     padding-top: 1.2em;

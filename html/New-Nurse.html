@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <form action="" method="post" class="wrapper">
+                    <form action="" method="post" class="wrapper" id = 'newnurseform'>
                         <div class="form-group">
                             <label for="name">Name <span style="color: red;">*</span></label>
                             <input type="text" id="name" name="name" required>
@@ -79,8 +79,12 @@
                         <div class="form-group">
                             <label for="address">Address <span style="color: red;">*</span></label>
                             <input type="text" id="address" name="address" required>
-                            <label for="specialization">Specialization <span style="color: red;">*</span></label>
-                            <input type="text" id="specialization" name="specialization" required>
+                            <label for="specialization">Specialization</label>
+                            <select id="specialization" name="specialization" required>
+                                <option value="Nerve">Nerve</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedic">Orthopedic</option>
+                            </select>
                             <label for="password">Password <span style="color: red;">*</span></label>
                             <input type="password" id="password" name="password" required>
                         </div>
@@ -94,6 +98,6 @@
         </section>
     </div>
 </body>
-<script src="../javascript/New-Doctor.js"></script>
+<script src="../javascript/New-Nurse.js"></script>
 
 </html>

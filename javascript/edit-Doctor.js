@@ -22,23 +22,19 @@ for (var i = 0; i < dropdown_elements.length; i++) {
 document.getElementById('doctorForm').addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission
-    const form = event.target;
+    event.preventDefault(); // To prevent reset the forms
 
-    // Perform form submission using fetch (for modern browsers)
-    fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
-    }).then(response => {
-        if (response.ok) {
-            // Redirect to another page upon successful submission
-            window.location.href = 'your-page-url.html';
-        } else {
-            // Handle error
-            alert('Form submission failed!');
-        }
-    }).catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while submitting the form!');
-    });
+    const confirmUser = confirm("Are you sure you want to submit?")
+    if(confirmUser == false){
+        return;
+    }
+
+    const doctorForm = document.getElementById('doctorForm')
+
+    setTimeout(() => {
+        alert("Your data has been successfully deleted.");
+        doctorForm.submit();
+        window.location.href = 'Doctor.html';
+    }, 100); // Delay to ensure the alert is shown after the form is processed
+    
 }

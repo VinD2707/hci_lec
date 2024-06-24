@@ -72,8 +72,12 @@
                       <div class="form-group">
                         <label for="name">Patient <span style="color: red;">*</span></label>
                         <input type="text" id="name" name="name" required disabled placeholder="Matt Dickerson">
-                        <label for="phone">Specialization <span style="color: red;">*</span></label>
-                        <input type="text" id="phone" name="phone" required disabled placeholder="Nerve">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" name="specialization" disabled>
+                            <option value="Nerve">Nerve</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Orthopedic">Orthopedic</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="address">Doctor <span style="color: red;">*</span></label>
@@ -87,8 +91,12 @@
                       <div class="form-group">
                         <label for="patient">Patient <span style="color: red;">*</span></label>
                         <input type="text" id="patient" name="patient">
-                        <label for="specialization">Specialization <span style="color: red;">*</span></label>
-                        <input type="text" id="specialization" name="specialization">
+                        <label for="specialization">Specialization</label>
+                        <select id="specialization" name="specialization" required>
+                            <option value="Nerve">Nerve</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Orthopedic">Orthopedic</option>
+                        </select>
                       </div>
                       <div class="form-group">
                         <label for="doctor">Doctor <span style="color: red;">*</span></label>

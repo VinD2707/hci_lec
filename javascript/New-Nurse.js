@@ -42,15 +42,15 @@ function validateForm(event) {
         return;
     }
 
-    const newdoctorform = document.getElementById('newdoctorform')
+    const newnurseform = document.getElementById('newnurseform')
 
     setTimeout(() => {
         alert("Your data has been successfully deleted.");
-        newdoctorform.submit();
-        window.location.href = 'Doctor.html';
+        newnurseform.submit();
+        window.location.href = 'nurse.html';
     }, 100); // Delay to ensure the alert is shown after the form is processed
     
 }
 
 
-document.getElementById('newdoctorform').addEventListener('submit', validateForm);
+document.getElementById('newnurseform').addEventListener('submit', validateForm);
